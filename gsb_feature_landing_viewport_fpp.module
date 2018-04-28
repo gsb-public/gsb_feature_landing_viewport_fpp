@@ -6,40 +6,45 @@
 
 include_once 'gsb_feature_landing_viewport_fpp.features.inc';
 
-function gsb_feature_landing_viewport_fpp_form_alter(&$form, &$form_state) {
-  dpm($form);
+function gsb_feature_landing_viewport_fpp_form_alter(&$form, &$form_state, $form_id) {
   if ($form['#form_id'] == 'fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form') {
-  dpm($form['#form_id']);
     // Get the list of taxonomy terms and set conditions
-//    $person_types_index = $form['field_person_type']['und']['#options'];
-//    foreach ($person_types_index as $key => $person_type) {
-//      if ($person_type == 'MBA Student') {
-//
-//      } elseif ($person_type == 'Sloan Fellow') {
-//
-//        $field_condition['field_title_position_single'][] = array('value' => $key);
-//
-//      } elseif ($person_type == 'PhD Student') {
-//
-//        $field_condition['field_field_of_study'][] = array('value' => $key);
-//
-//      } else {
-//        drupal_set_message('Selected taxonomy term not defined in gsb_features_voices_ct', 'error');
-//      }
-//
-//    }
-//
-//    foreach($field_condition as $field => $condition) {
-//      $form[$field]['#states'] = [
-//        'visible' => [
-//          ':input[name="field_person_type[und]"]' => $field_condition[$field],
-//        ],
-//        'required' => [
-//          ':input[name="field_person_type[und]"]' => $field_condition[$field],
-//        ]
-//      ];
-//    }
+    $media_types = $form['field_image_or_video']['und']['#options'];
+    foreach ($media_types as $key => $media_type) {
+      if ($media_type == 'Video') {
 
+        $field_condition['field_homepage_video_url'][] = array('value' => $key);
+        $field_condition['field_homepage_video_text'][] = array('value' => $key);
+
+      } elseif ($media_type == 'Image') {
+
+        $field_condition['field_homepage_image_desktop'][] = array('value' => $key);
+        $field_condition['field_homepage_image_tablet'][] = array('value' => $key);
+        $field_condition['field_homepage_image_mobile'][] = array('value' => $key);
+        $field_condition['field_homepage_image_text'][] = array('value' => $key);
+        $field_condition['field_homepage_image_url'][] = array('value' => $key);
+        $field_condition['field_homepage_image_color'][] = array('value' => $key);
+
+      } else {
+        drupal_set_message('Selected taxonomy term not defined in gsb_feature_spotlight', 'error');
+      }
+
+    }
+
+    foreach($field_condition as $field => $condition) {
+      $form[$field]['#states'] = [
+        'visible' => [
+          ':input[name="field_image_or_video[und]"]' => $field_condition[$field],
+        ],
+        'required' => [
+          ':input[name="field_image_or_video[und]"]' => $field_condition[$field],
+        ]
+      ];
+    }
   }
 
+drupal_add_css(
+  'form#fieldable-panels-panes-fieldable-panels-pane-content-type-edit-form .form-radios span.form-required { display: none !important; }',
+  array('group' => 'gsb_theme_admin', 'type' => 'inline')
+);
 };
