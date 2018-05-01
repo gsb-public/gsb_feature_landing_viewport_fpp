@@ -26,7 +26,7 @@ function gsb_feature_landing_viewport_fpp_form_alter(&$form, &$form_state, $form
         $field_condition['field_homepage_image_color'][] = array('value' => $key);
 
       } else {
-        drupal_set_message('Selected option not defined in gsb_feature_spotlight', 'error');
+        drupal_set_message('Selected taxonomy term not defined in gsb_feature_spotlight', 'error');
       }
 
     }
