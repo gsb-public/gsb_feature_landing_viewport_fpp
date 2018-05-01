@@ -1,7 +1,7 @@
 name = GSB Feature Landing Viewport FPP
 core = 7.x
 package = GSB
-version = 7.x-6.52
+version = 7.x-6.53
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = filefield_paths
