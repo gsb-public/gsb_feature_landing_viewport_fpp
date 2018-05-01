@@ -15,7 +15,7 @@ function gsb_feature_landing_viewport_fpp_entity_info_alter(&$entity_info) {
       'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
       'bundle argument' => 4,
       // Note that this has all _ replaced with - from the bundle name.
-      'real path' => 'admin/structure/fieldable-panels-panes/manage/landing_viewport',
+      'real path' => 'admin/structure/fieldable-panels-panes/manage/landing-viewport',
       'access arguments' => array('administer fieldable panels panes'),
     ),
   );
@@ -24,14 +24,13 @@ function gsb_feature_landing_viewport_fpp_entity_info_alter(&$entity_info) {
 /**
  * Implements template_preprocess_fieldable_panels_pane()
  */
-function ggsb_feature_landing_viewport_fpp_preprocess_fieldable_panels_pane (&$variables) {
+function gsb_feature_landing_viewport_fpp_preprocess_fieldable_panels_pane (&$variables) {
   if ($variables['elements']['#bundle'] == 'landing_viewport') {
     $wrapper = entity_metadata_wrapper($variables['elements']['#entity_type'], $variables['elements']['#element']);
     // Determine the Links style and set corresponding style class for pane.
     $variables['classes_array'][] = $wrapper->field_link_style->value();
   }
 }
-
 
 function gsb_feature_landing_viewport_fpp_form_alter(&$form, &$form_state, $form_id) {
   if ($form['#form_id'] == 'fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form') {
