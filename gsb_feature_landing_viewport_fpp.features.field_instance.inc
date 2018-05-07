@@ -459,12 +459,25 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'file',
+        'label' => 'hidden',
+        'module' => 'file_entity',
         'settings' => array(
+          'autoplay' => 1,
           'conditions' => array(),
+          'controls' => 1,
+          'controls_list' => array(
+            'download' => 0,
+            'fullscreen' => 0,
+            'remote_playback' => 'remote_playback',
+          ),
+          'height' => '',
+          'loop' => 0,
+          'multiple_file_behavior' => 'tags',
+          'muted' => 0,
+          'preload' => 'auto',
+          'width' => '100%',
         ),
-        'type' => 'file_default',
+        'type' => 'file_video',
         'weight' => 16,
       ),
     ),
@@ -525,12 +538,9 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'text_default',
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 8,
       ),
     ),
@@ -636,12 +646,9 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'list_default',
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),

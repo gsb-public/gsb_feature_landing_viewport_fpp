@@ -5,6 +5,7 @@ version = 7.x-6.53
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = file
+dependencies[] = file_entity
 dependencies[] = filefield_paths
 dependencies[] = gsb_feature_base_fields
 dependencies[] = image

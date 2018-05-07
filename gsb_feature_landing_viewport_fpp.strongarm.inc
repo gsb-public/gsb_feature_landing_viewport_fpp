@@ -57,7 +57,7 @@ function gsb_feature_landing_viewport_fpp_strongarm() {
         'title' => array(
           'default' => array(
             'weight' => '-5',
-            'visible' => TRUE,
+            'visible' => FALSE,
           ),
         ),
       ),
