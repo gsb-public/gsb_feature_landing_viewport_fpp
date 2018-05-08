@@ -98,3 +98,19 @@ function gsb_feature_landing_viewport_fpp_form_alter(&$form, &$form_state, $form
 
 
 };
+
+function gsb_feature_landing_viewport_fpp_preprocess_fieldable_panels_pane(&$variables) {
+    if ($variables['elements']['#bundle'] != 'landing_viewport') {
+        return;
+    }
+    // Add classes based on the color chosen.
+    try {
+        $wrapper = entity_metadata_wrapper('fieldable_panels_pane', $variables['elements']['#element']);
+        $variables['classes_array'][] = 'bg-text-color-' . $wrapper->field_homepage_image_color->value();
+    }
+    catch (EntityMetadataWrapperException $e) {
+        // If the fields are ever missing/renamed, Entity API will throw an
+        // exception instead of using watchdog.
+        watchdog('gsb_feature_landing_viewport_fpp', 'In @function on line @line: "@message"', array('@function' => __FUNCTION__, '@line' => __LINE__, '@message' => $e->getMessage()), WATCHDOG_ERROR);
+    }
+}
