@@ -52,7 +52,7 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
       'settings' => array(
         'checkall' => FALSE,
       ),
-      'type' => 'options_buttons',
+      'type' => 'options_select',
       'weight' => 8,
     ),
     'workbench_access_field' => 0,
