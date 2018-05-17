@@ -297,7 +297,7 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'fieldable_panels_pane',
     'field_name' => 'field_homepage_image_url',
-    'label' => 'Image URL',
+    'label' => 'Image Text',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -320,8 +320,8 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
         'insert_plugin' => '',
       ),
       'rel_remove' => 'default',
-      'title' => 'optional',
-      'title_label_use_field_label' => 0,
+      'title' => 'required',
+      'title_label_use_field_label' => 1,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -568,7 +568,7 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
   t('Image (Desktop)');
   t('Image (Mobile)');
   t('Image (Tablet)');
-  t('Image URL');
+  t('Image Text');
   t('Media Type');
   t('Text');
   t('Video File');
