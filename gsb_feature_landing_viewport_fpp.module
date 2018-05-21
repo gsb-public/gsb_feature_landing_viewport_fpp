@@ -21,6 +21,38 @@ function gsb_feature_landing_viewport_fpp_entity_info_alter(&$entity_info) {
   );
 }
 
+
+function gsb_feature_landing_viewport_fpp_preprocess_panels_add_content_modal(&$vars) {
+  if (!empty($vars['categories']['root']['content']['Landing Viewport'])) {
+    $temp = $vars['categories']['root']['content']['Landing Viewport'];
+
+    unset($vars['categories']['root']['content']['Landing Viewport']);
+
+    $vars['categories']['homepage-elements']['content']['Landing Viewport'] = $temp;
+    $vars['categories']['homepage-elements']['content']['Landing Viewport']['category'] = [
+      '0' => 'Homepage Elements',
+      '1' => '0',
+    ];
+
+    unset($vars['categories']['homepage-elements']['content']['Mission Statement']['top level']);
+  }
+}
+
+function gsb_feature_landing_viewport_fpp_process_panels_add_content_modal(&$vars) {
+  if (!empty($vars['categories']['root']['content']['Landing Viewport'])) {
+    $temp = $vars['categories']['root']['content']['Landing Viewport'];
+
+    unset($vars['categories']['root']['content']['Landing Viewport']);
+
+    $vars['categories']['homepage-elements']['content']['Landing Viewport'] = $temp;
+    $vars['categories']['homepage-elements']['content']['Landing Viewport']['category'] = [
+      '0' => 'Homepage Elements',
+      '1' => '0',
+    ];
+  }
+}
+
+
 function gsb_feature_landing_viewport_fpp_form_alter(&$form, &$form_state, $form_id) {
   if ($form['#form_id'] == 'fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form') {
     // Get the list of taxonomy terms and set conditions
