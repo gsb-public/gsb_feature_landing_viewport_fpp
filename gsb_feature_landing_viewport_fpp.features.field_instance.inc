@@ -149,7 +149,7 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'picture',
+        'module' => 'image',
         'settings' => array(
           'colorbox_settings' => array(
             'colorbox_caption' => 'auto',
@@ -232,7 +232,7 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'picture',
+        'module' => 'image',
         'settings' => array(
           'colorbox_settings' => array(
             'colorbox_caption' => 'auto',
