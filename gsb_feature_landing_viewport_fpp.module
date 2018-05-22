@@ -56,12 +56,11 @@ function gsb_feature_landing_viewport_fpp_process_panels_add_content_modal(&$var
 function gsb_feature_landing_viewport_fpp_form_alter(&$form, &$form_state, $form_id) {
   if ($form['#form_id'] == 'fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form') {
     // Get the list of taxonomy terms and set conditions
-
     drupal_add_css(
       'form#fieldable-panels-panes-fieldable-panels-pane-content-type-edit-form .form-radios span.form-required { display: none !important; }',
       array('group' => 'gsb_theme_admin', 'type' => 'inline')
     );
-
+    unset($form['field_homepage_image_color']['und']['#options']['_none']);
     $media_types = $form['field_image_or_video']['und']['#options'];
     foreach ($media_types as $key => $media_type) {
       if ($media_type == 'Video') {
