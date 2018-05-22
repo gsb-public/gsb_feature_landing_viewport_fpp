@@ -34,7 +34,7 @@ function gsb_feature_landing_viewport_fpp_preprocess_panels_add_content_modal(&$
       '1' => '0',
     ];
 
-    unset($vars['categories']['homepage-elements']['content']['Mission Statement']['top level']);
+    unset($vars['categories']['homepage-elements']['content']['Landing Viewport']['top level']);
   }
 }
 
