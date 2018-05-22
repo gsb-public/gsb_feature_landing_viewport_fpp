@@ -66,7 +66,7 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'picture',
         'settings' => array(
           'colorbox_settings' => array(
             'colorbox_caption' => 'auto',
@@ -83,7 +83,7 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
           'lazyload_aspect_ratio' => 1,
           'picture_mapping' => 'landing_viewport_picture_mapping',
         ),
-        'type' => 'image',
+        'type' => 'picture',
         'weight' => 0,
       ),
     ),
@@ -149,7 +149,7 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'picture',
         'settings' => array(
           'colorbox_settings' => array(
             'colorbox_caption' => 'auto',
@@ -166,7 +166,7 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
           'lazyload_aspect_ratio' => 1,
           'picture_mapping' => 'landing_viewport_picture_mapping',
         ),
-        'type' => 'image',
+        'type' => 'picture',
         'weight' => 2,
       ),
     ),
@@ -232,7 +232,7 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'picture',
         'settings' => array(
           'colorbox_settings' => array(
             'colorbox_caption' => 'auto',
@@ -245,11 +245,11 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
           'conditions' => array(),
           'fallback_image_style' => '',
           'image_link' => '',
-          'lazyload' => 0,
+          'lazyload' => 1,
           'lazyload_aspect_ratio' => 1,
           'picture_mapping' => 'landing_viewport_picture_mapping',
         ),
-        'type' => 'image',
+        'type' => 'picture',
         'weight' => 1,
       ),
     ),
