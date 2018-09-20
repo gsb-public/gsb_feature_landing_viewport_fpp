@@ -61,7 +61,10 @@ function gsb_feature_landing_viewport_fpp_form_alter(&$form, &$form_state, $form
       array('group' => 'gsb_theme_admin', 'type' => 'inline')
     );
     unset($form['field_homepage_image_color']['und']['#options']['_none']);
-    $media_types = $form['field_image_or_video']['und']['#options'];
+    $media_types = array();
+    if (!empty($form['field_image_or_video'])) {
+      $media_types = $form['field_image_or_video']['und']['#options'];
+    }
     foreach ($media_types as $key => $media_type) {
       if ($media_type == 'Video') {
 
