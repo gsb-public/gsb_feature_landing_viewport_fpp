@@ -382,24 +382,19 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'file_entity',
+        'module' => 'gsb_field_formatter',
         'settings' => array(
-          'autoplay' => 1,
+          'file_view_mode' => 'default',
           'conditions' => array(),
-          'controls' => 1,
           'controls_list' => array(
             'download' => 0,
             'fullscreen' => 0,
-            'remote_playback' => 'remote_playback',
           ),
           'height' => '',
           'loop' => 0,
-          'multiple_file_behavior' => 'tags',
           'muted' => 0,
-          'preload' => 'auto',
-          'width' => '100%',
         ),
-        'type' => 'file_video',
+        'type' => 'gsb_field_formatter_landing_page_video',
         'weight' => 4,
       ),
     ),
