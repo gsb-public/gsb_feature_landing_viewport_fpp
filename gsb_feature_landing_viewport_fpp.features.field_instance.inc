@@ -602,11 +602,12 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'gsb_field_formatter',
         'settings' => array(
           'conditions' => array(),
+          'file_view_mode' => 'default',
         ),
-        'type' => 'text_default',
+        'type' => 'gsb_field_formatter_landing_page_kaltura_video',
         'weight' => 5,
       ),
     ),
