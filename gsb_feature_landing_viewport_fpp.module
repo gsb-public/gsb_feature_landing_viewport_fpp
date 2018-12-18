@@ -66,7 +66,11 @@ function gsb_feature_landing_viewport_fpp_form_alter(&$form, &$form_state, $form
       $media_types = $form['field_image_or_video']['und']['#options'];
     }
     foreach ($media_types as $key => $media_type) {
-      if ($media_type == 'Video') {
+      if ($media_type == 'Kaltura Video') {
+
+        $field_condition['field_kaltura_video_id'][] = array('value' => $key);
+
+      } elseif ($media_type == 'Video') {
 
         $field_condition['field_homepage_video_file'][] = array('value' => $key);
         $field_condition['field_homepage_video_text'][] = array('value' => $key);

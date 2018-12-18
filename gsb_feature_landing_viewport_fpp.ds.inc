@@ -112,6 +112,7 @@ function gsb_feature_landing_viewport_fpp_ds_layout_settings_info() {
         2 => 'field_homepage_image_mobile',
         3 => 'field_homepage_image_url',
         4 => 'field_homepage_video_file',
+        5 => 'field_kaltura_video_id',
       ),
     ),
     'fields' => array(
@@ -120,6 +121,7 @@ function gsb_feature_landing_viewport_fpp_ds_layout_settings_info() {
       'field_homepage_image_mobile' => 'ds_content',
       'field_homepage_image_url' => 'ds_content',
       'field_homepage_video_file' => 'ds_content',
+      'field_kaltura_video_id' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
