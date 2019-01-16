@@ -85,6 +85,14 @@ function gsb_feature_landing_viewport_fpp_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_kaltura_video_id' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'suffix' => '<a class="scrollLink">Scroll to Explore</a>',
+        ),
+      ),
+    ),
   );
   $export['fieldable_panels_pane|landing_viewport|default'] = $ds_fieldsetting;
 
