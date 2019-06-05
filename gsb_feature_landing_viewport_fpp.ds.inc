@@ -93,6 +93,19 @@ function gsb_feature_landing_viewport_fpp_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_kaltura_video_text' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'viewport-kaltura-video-text',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
   );
   $export['fieldable_panels_pane|landing_viewport|default'] = $ds_fieldsetting;
 
@@ -121,6 +134,7 @@ function gsb_feature_landing_viewport_fpp_ds_layout_settings_info() {
         3 => 'field_homepage_image_url',
         4 => 'field_homepage_video_file',
         5 => 'field_kaltura_video_id',
+        6 => 'field_kaltura_video_text',
       ),
     ),
     'fields' => array(
@@ -130,6 +144,7 @@ function gsb_feature_landing_viewport_fpp_ds_layout_settings_info() {
       'field_homepage_image_url' => 'ds_content',
       'field_homepage_video_file' => 'ds_content',
       'field_kaltura_video_id' => 'ds_content',
+      'field_kaltura_video_text' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
