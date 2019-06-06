@@ -32,6 +32,7 @@ features[field_instance][] = fieldable_panels_pane-landing_viewport-field_homepa
 features[field_instance][] = fieldable_panels_pane-landing_viewport-field_homepage_video_text
 features[field_instance][] = fieldable_panels_pane-landing_viewport-field_image_or_video
 features[field_instance][] = fieldable_panels_pane-landing_viewport-field_kaltura_video_id
+features[field_instance][] = fieldable_panels_pane-landing_viewport-field_kaltura_video_text
 features[variable][] = field_bundle_settings_fieldable_panels_pane__landing_viewport
 features_exclude[field_base][field_homepage_image_color] = field_homepage_image_color
 features_exclude[field_base][field_homepage_image_desktop] = field_homepage_image_desktop
