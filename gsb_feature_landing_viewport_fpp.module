@@ -52,7 +52,9 @@ function gsb_feature_landing_viewport_fpp_process_panels_add_content_modal(&$var
   }
 }
 
-
+/**
+ * Implements hook_form_alter().
+ */
 function gsb_feature_landing_viewport_fpp_form_alter(&$form, &$form_state, $form_id) {
   if ($form['#form_id'] == 'fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form') {
     // Get the list of taxonomy terms and set conditions
@@ -69,6 +71,7 @@ function gsb_feature_landing_viewport_fpp_form_alter(&$form, &$form_state, $form
       if ($media_type == 'Kaltura Video') {
 
         $field_condition['field_kaltura_video_id'][] = array('value' => $key);
+        $field_condition['field_kaltura_video_text'][] = array('value' => $key);
 
       } elseif ($media_type == 'Video') {
 
@@ -87,7 +90,6 @@ function gsb_feature_landing_viewport_fpp_form_alter(&$form, &$form_state, $form
       } else {
         drupal_set_message('Selected option not defined in gsb_landing_viewport', 'error');
       }
-
     }
 
     foreach($field_condition as $field => $condition) {
@@ -100,10 +102,20 @@ function gsb_feature_landing_viewport_fpp_form_alter(&$form, &$form_state, $form
         ]
       ];
     }
+
+    $form['#validate'][] = 'gsb_feature_landing_viewport_fpp_form_validate';
   }
-
-
 };
+
+/**
+ * Validate handler for gsb_feature_landing_viewport_fpp_form.
+ *  - Clear the Kaltura Video Text if Kaltura Video is not the choosen option
+ */
+function gsb_feature_landing_viewport_fpp_form_validate(&$form, &$form_state) {
+  if ($form_state['values']['field_image_or_video']['und'][0]['value'] != 'KalturaVideo') {
+    form_set_value($form['field_kaltura_video_text'],array('und' => array(0 => array('value' => ''))),$form_state);
+  }
+}
 
 function gsb_feature_landing_viewport_fpp_preprocess_fieldable_panels_pane(&$variables) {
     if ($variables['elements']['#bundle'] != 'landing_viewport') {
