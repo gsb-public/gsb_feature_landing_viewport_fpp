@@ -56,7 +56,7 @@ function gsb_feature_landing_viewport_fpp_process_panels_add_content_modal(&$var
  * Implements hook_form_alter().
  */
 function gsb_feature_landing_viewport_fpp_form_alter(&$form, &$form_state, $form_id) {
-  if ($form["#bundle"] !== "landing_viewport") {
+  if (empty($form["#bundle"]) || $form["#bundle"] !== "landing_viewport") {
     return;
   }
   if ($form['#form_id'] == 'fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form') {
