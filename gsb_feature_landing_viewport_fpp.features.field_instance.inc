@@ -82,7 +82,7 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
     'label' => 'Image (Desktop)',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'custom_add_another' => '',
       'custom_remove' => '',
       'default_image' => 0,
@@ -154,7 +154,7 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
     'label' => 'Image (Mobile)',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'custom_add_another' => '',
       'custom_remove' => '',
       'default_image' => 0,
@@ -226,7 +226,7 @@ function gsb_feature_landing_viewport_fpp_field_default_field_instances() {
     'label' => 'Image (Tablet)',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'custom_add_another' => '',
       'custom_remove' => '',
       'default_image' => 0,
